@@ -1,18 +1,22 @@
 # PowerShell Tutorial
 
-## 🔹 Basic Syntax
-
+### Variables
 ```powershell
-# Variables
 $var = "value"
+```
 
-# Comments
+### Comments
+```powershell
 # This is a comment
+```
 
-# Output
+### Output
+```powershell
 Write-Output "Hello"
+```
 
-# If-Else
+### If-Else
+```powershell
 if ($x -eq 5) {
     Write-Output "Yes"
 } elseif ($x -gt 5) {
@@ -20,13 +24,16 @@ if ($x -eq 5) {
 } else {
     Write-Output "No"
 }
+```
 
-# Loops
+### Loops
+```powershell
 foreach ($item in $list) { ... }
 for ($i = 0; $i -lt 10; $i++) { ... }
 while ($true) { ... }
+```
 
-
+### Comparison
 | Operator    | Description                |
 | ----------- | -------------------------- |
 | `-eq`       | Equal                      |
@@ -37,33 +44,52 @@ while ($true) { ... }
 | `-match`    | Regex match                |
 | `-contains` | Contains item (for arrays) |
 
-# Get files
+### Get files
+```powershell
 Get-ChildItem -Path "C:\Folder"
+```
 
-# Read file
+### Read file
+```powershell
 Get-Content "file.txt"
+```
 
-# Write to file
+### Write to file
+```powershell
 "Hello" | Out-File "file.txt"
+```
 
-# Copy / Move / Remove
+### Copy / Move / Remove
+```powershell
 Copy-Item "src.txt" "dest.txt"
 Move-Item "a.txt" "b.txt"
 Remove-Item "old.txt"
+```
 
+### Methods
+```powershell
 function Greet($name) {
     return "Hello, $name"
 }
+```
 
-# Import module
+### Import module
+```powershell
 Import-Module Az
+```
 
-# List commands
+### List commands
+```powershell
 Get-Command
+```
 
-# Help
+### Help
+```powershell
 Get-Help Get-Process
+```
 
+### Try Catch
+```powershell
 try {
     # risky code
 } catch {
@@ -71,7 +97,10 @@ try {
 } finally {
     # always runs
 }
-
+```
+##Pipelines & Filtering
+```powershell
 Get-Process | Where-Object { $_.CPU -gt 100 }
 Get-Service | Select-Object Name, Status
+```
 
